@@ -1,7 +1,7 @@
 import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
-from keras.preprocessing import image
+from tensorflow.keras.utils import load_img
 
 print(tf.__version__)
 
