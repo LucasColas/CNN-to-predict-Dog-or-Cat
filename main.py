@@ -16,7 +16,7 @@ train_datagen = ImageDataGenerator(
 )
 
 training_set = train_datagen.flow_from_directory(
-                'C:\\Users\\lucas\\Desktop\\Deep Learning\\Deep Learning A-Z\\Machine Learning A-Z (Codes and Datasets)\\Part 8 - Deep Learning\\Section 40 - Convolutional Neural Networks (CNN)\\Python\\Section 40 - Convolutional Neural Networks (CNN)\\dataset\\training_set',
+                "dataset//training_set",
                 target_size=(64,64),
                 batch_size=32,
                 class_mode='binary'
@@ -25,7 +25,7 @@ training_set = train_datagen.flow_from_directory(
 #Preprocessing the test set
 test_datagen = ImageDataGenerator(rescale=1./255)
 test_set = test_datagen.flow_from_directory(
-            'C:\\Users\\lucas\\Desktop\\Deep Learning\\Deep Learning A-Z\\Machine Learning A-Z (Codes and Datasets)\\Part 8 - Deep Learning\\Section 40 - Convolutional Neural Networks (CNN)\\Python\\Section 40 - Convolutional Neural Networks (CNN)\\dataset\\test_set',
+            "dataset//test_set",
             target_size=(64,64),
             batch_size=32,
             class_mode='binary'
@@ -63,7 +63,7 @@ cnn.fit(x = training_set, validation_data = test_set, epochs=30)
 
 
 
-test_image = image.load_img('C:\\Users\\lucas\\Desktop\\Deep Learning\\Deep Learning A-Z\\Machine Learning A-Z (Codes and Datasets)\\Part 8 - Deep Learning\\Section 40 - Convolutional Neural Networks (CNN)\\Python\\Section 40 - Convolutional Neural Networks (CNN)\\dataset\\single_prediction\\cat_or_dog_1.jpg', target_size=(64,64))
+test_image = image.load_img("dataset//single_prediction//cat_or_dog_1.jpg", target_size=(64,64))
 test_image = image.img_to_array(test_image)
 
 test_image = np.expand_dims(test_image, axis=0) #adding dimension corresponding to a batch
